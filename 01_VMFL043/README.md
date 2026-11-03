@@ -8,19 +8,20 @@ The simulations correspond to 1,500 iterations and an additional 2,000 iteration
 Detailed numerical settings, results, and discussion are presented in **Section 4 of the Research Internship Report**.
 
 
+
 ## Fluent Simulation Files
 
 **1,500 iterations**
-- [Case file](1500.cas.h5)
-- [Data file](1500.dat.h5)
+- [Case file](cases/1500.cas.h5)
+- [Data file](cases/1500.dat.h5)
 
 **3,500 cumulative iterations**
-- [Case file](bl-trans-3.cas.h5)
-- [Data file](bl-trans-3-03500.dat.h5)
+- [Case file](cases/bl-trans-3.cas.h5)
+- [Data file](cases/bl-trans-3-03500.dat.h5)
 
 ## Validation Results
 
 Skin-friction coefficient comparison with experimental measurements.
 
-![VMFL043 Skin-Friction Validation](cf_validation.png)
+![VMFL043 Skin-Friction Validation](results/cf_validation.png)
 
