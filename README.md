@@ -2,7 +2,7 @@
 
 # Assessment of Transition and Surface Roughness Modelling in ANSYS Fluent
 
-This repository contains the numerical simulation cases and selected results developed during a research internship at École de technologie supérieure (ÉTS), Montréal, under the supervision of Professor François Morency.
+This repository contains the numerical simulation cases and selected results developed during a research internship conducted from July to September 2026 at École de technologie supérieure (ÉTS), Montréal, Canada, under the supervision of Professor François Morency.
 
 ## Research Objective
 
