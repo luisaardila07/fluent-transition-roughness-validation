@@ -10,16 +10,20 @@ The broader research objective is to predict the aerodynamic performance degrada
 
 As a preliminary step toward this objective, the investigation focused on assessing laminar-to-turbulent transition and surface roughness modelling in ANSYS Fluent. Particular attention was given to the influence of localized leading-edge roughness on boundary-layer development and its downstream aerodynamic effects.
 
+
 ## Numerical Investigations
 
-The work followed three main stages:
+The investigation was organized into three stages:
 
-1. **VMFL043:** Reproduction of an ANSYS flat-plate transition benchmark.
-2. **ERCOFTAC T3A:** Reconstruction of a transitional flat-plate case and parametric studies of turbulence and roughness inputs.
-3. **NACA 0012:** Assessment of smooth and locally roughened airfoil configurations, including additional numerical diagnostics and exploratory model development.
+1. **[VMFL043 — Flat-Plate Transition Benchmark](01_VMFL043/README.md)**  
+   Validation of the Transition SST model against an ANSYS reference benchmark and experimental skin-friction measurements.
 
-Each case directory contains the relevant simulation files and selected comparison results.
+2. **[ERCOFTAC T3A — Transition and Parametric Study](02_T3A/README.md)**  
+   Comparison with NASA, SU2, and experimental data, followed by sensitivity analyses of turbulence and roughness parameters.
 
-Detailed numerical configurations, methodology, results, and limitations are presented in the accompanying *Research Internship Report — Assessment of Transition and Surface Roughness Modelling in ANSYS Fluent*.
+3. **[NACA 0012 — Transition and Surface Roughness Assessment](03_NACA0012/README.md)**  
+   Smooth and rough-wall simulations, turbulence sustaining, global geometric-roughness diagnostics, exploratory roughness transport, and standard SST comparisons.
 
-Ice accretion and rotor-performance predictions remain objectives of subsequent research.
+Each directory contains ANSYS Fluent simulation files and selected results. The NACA 0012 directory also includes the available UDF source codes.
+
+Detailed numerical methodology, results, and limitations are documented in the separately provided Research Internship Report. Ice accretion and rotor-performance predictions remain objectives of subsequent research.
