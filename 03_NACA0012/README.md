@@ -109,6 +109,6 @@ A diagnostic with the **k–ω SST** closure and **transition equations disabled
 
 ## Scope and Reproducibility
 
-All provided `.cas.h5` and `.dat.h5` files are native Fluent archives. Reproducing UDF-based cases requires compiling the supplied `.c` files in a compatible Fluent environment and checking that the correct callbacks are assigned; the additional K = 10 mm source dependency is noted above. The roughness-transport implementation has unresolved convergence and discretization uncertainties. **The NACA 0012 study assesses numerical transition/roughness treatments; it is not an ice-accretion or rotor-thrust prediction.**
+All provided `.cas.h5` and `.dat.h5` files are native Fluent archives. Reproducing UDF-based cases requires compiling the supplied `.c` files in a compatible Fluent environment and checking that the correct callbacks are assigned; the additional K = 10 mm source dependency is noted above. The roughness-transport implementation has unresolved convergence and discretization uncertainties. 
 
 See **Section 6 of the Research Internship Report** for computational settings, velocity normalization, profile-error metrics, residual histories, and limitations.
