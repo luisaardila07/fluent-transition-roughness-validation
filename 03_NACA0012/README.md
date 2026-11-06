@@ -4,6 +4,12 @@ This study investigated boundary-layer transition and leading-edge roughness eff
 
 The work first established a smooth reference and a native localized-roughness calculation, then examined freestream turbulence sustaining, separate geometric and wall-roughness inputs, globally extended transition-roughness forcing, exploratory transport of a roughness-amplification scalar (`Ar`), and standard SST without the transition equations. All configurations, comparisons, and limitations are documented in **Section 6 of the Research Internship Report**.
 
+## Directory Structure
+
+- `cases/` — ANSYS Fluent `.cas.h5` and `.dat.h5` files for the selected simulations.
+- `udf/` — C source files defining roughness, turbulence-sustaining, and exploratory transport models.
+- `results/` — representative validation and diagnostic figures (PNG).
+
 ## 1. Smooth-Wall Reference
 
 Transition SST with **K = Ks = 0**, without turbulence-sustaining sources. This is the unmodified reference for subsequent calculations.
@@ -18,8 +24,8 @@ Transition SST with **K = Ks = 0**, without turbulence-sustaining sources. This 
 
 The same smooth geometry and Transition SST formulation, with UDF source terms for **k** and **ω** to counteract freestream turbulence decay. The ambient targets were **Tu = 0.1%** and **μt/μ = 10**.
 
-- [Fluent case](cases/smooth_sustained/SST_SUST_FINAL.cas.h5) · [Fluent data](cases/smooth_sustained/SST_SUST_FINAL.dat.h5)
-- [Sustaining UDF](cases/smooth_sustained/sst_sustain_tu01.c)
+- [Fluent case](cases/SST_SUST_FINAL.cas.h5) · [Fluent data](cases/SST_SUST_FINAL.dat.h5)
+- [Sustaining UDF](udf/sst_sustain_tu01.c)
 
 **Ambient turbulence with and without sustaining**
 
@@ -29,8 +35,8 @@ The same smooth geometry and Transition SST formulation, with UDF source terms f
 
 Transition SST with a finite roughness strip on the **upper surface**, located at **0.00612 ≤ x/c ≤ 0.0258**. The prescribed geometric height was **K = 0.35 mm**, the equivalent sand-grain height was **Ks = 0.23 mm**, and the wall roughness constant was **Cs = 0.50**. The saved reference was calculated **without turbulence-sustaining sources**. K and Ks were imposed through distinct UDF callbacks.
 
-- [Fluent case](cases/localized_roughness/NACA0012_KGEOM035_KS023_FINAL.cas.h5) · [Fluent data](cases/localized_roughness/NACA0012_KGEOM035_KS023_FINAL.dat.h5)
-- [Localized K and Ks UDF](cases/localized_roughness/kerho_kgeom_ks023.c)
+- [Fluent case](cases/NACA0012_KGEOM035_KS023_FINAL.cas.h5) · [Fluent data](cases/NACA0012_KGEOM035_KS023_FINAL.dat.h5)
+- [Localized K and Ks UDF](udf/kerho_kgeom_ks023.c)
 
 **Velocity profiles — localized roughness vs. Kerho–Bragg measurements**
 
@@ -52,12 +58,12 @@ To test the effect of continued transition-correlation forcing downstream, a **s
 
 | Geometric K | Fluent case | Fluent data |
 |---|---|---|
-| 0 mm (base) | [Case](cases/global_K_sustained/MANUAL_K_BASE_KS023_SUST.cas.h5) | [Data](cases/global_K_sustained/MANUAL_K_BASE_KS023_SUST.dat.h5) |
-| 0.35 mm | [Case](cases/global_K_sustained/MANUAL_K_035mm_KS023_SUST.cas.h5) | [Data](cases/global_K_sustained/MANUAL_K_035mm_KS023_SUST.dat.h5) |
-| 5 mm | [Case](cases/global_K_sustained/MANUAL_K_5mm_KS023_SUST.cas.h5) | [Data](cases/global_K_sustained/MANUAL_K_5mm_KS023_SUST.dat.h5) |
-| 10 mm; Ks = 0.23 mm | [Case](cases/global_K_sustained/K10GLOBAL_KS0230UM_FINAL.cas.h5) | [Data](cases/global_K_sustained/K10GLOBAL_KS0230UM_FINAL.dat.h5) |
+| 0 mm (base) | [Case](cases/MANUAL_K_BASE_KS023_SUST.cas.h5) | [Data](cases/MANUAL_K_BASE_KS023_SUST.dat.h5) |
+| 0.35 mm | [Case](cases/MANUAL_K_035mm_KS023_SUST.cas.h5) | [Data](cases/MANUAL_K_035mm_KS023_SUST.dat.h5) |
+| 5 mm | [Case](cases/MANUAL_K_5mm_KS023_SUST.cas.h5) | [Data](cases/MANUAL_K_5mm_KS023_SUST.dat.h5) |
+| 10 mm; Ks = 0.23 mm | [Case](cases/K10GLOBAL_KS0230UM_FINAL.cas.h5) | [Data](cases/K10GLOBAL_KS0230UM_FINAL.dat.h5) |
 
-- [UDF used for localized Ks and sustaining in the manual-K cases](cases/global_K_sustained/kerho_ks023_sustain_only.c)
+- [UDF used for localized Ks and sustaining in the manual-K cases](udf/kerho_ks023_sustain_only.c)
 
 **Velocity profiles — global geometric K vs. Kerho–Bragg measurements**
 
@@ -71,10 +77,10 @@ A user-defined scalar **Ar** was used to explore the downstream persistence of l
 
 The archived pair is the extended **Phase 2B** solution (through recorded iteration **2002**). The report examines the coupled interval **1503–1802**. This remains an **exploratory, not fully converged or validated**, model assessment.
 
-- [Fluent case](cases/roughness_transport_Ar/KERHO_AR_PHASE2B_COUPLED_PLUS0200.cas.h5) · [Fluent data](cases/roughness_transport_Ar/KERHO_AR_PHASE2B_COUPLED_PLUS0200.dat.h5)
-- [Phase 2A scalar diffusivity and wall-condition UDF](cases/roughness_transport_Ar/kerho_ar_phase2a_generated.c)
-- [Phase 2B transition-coupling UDF](cases/roughness_transport_Ar/kerho_ar_phase2b_langel_source.c)
-- [Localized roughness UDF referenced by the saved configuration](cases/roughness_transport_Ar/kerho_kgeom_ks023.c)
+- [Fluent case](cases/KERHO_AR_PHASE2B_COUPLED_PLUS0200.cas.h5) · [Fluent data](cases/KERHO_AR_PHASE2B_COUPLED_PLUS0200.dat.h5)
+- [Phase 2A scalar diffusivity and wall-condition UDF](udf/kerho_ar_phase2a_generated.c)
+- [Phase 2B transition-coupling UDF](udf/kerho_ar_phase2b_langel_source.c)
+- [Localized roughness UDF referenced by the saved configuration](udf/kerho_kgeom_ks023.c)
 
 **Transported roughness scalar and downstream persistence**
 
@@ -90,8 +96,8 @@ Additional coupling diagnostics: [transition criterion](results/ar_transition_cr
 
 A diagnostic with the **k–ω SST** closure and **transition equations disabled**, while retaining localized **Ks = 0.23 mm**, **Cs = 0.50**, and the **k/ω sustaining sources**. This comparison examines the effect of removing explicit transition gating; it should not be interpreted as a uniformly turbulent boundary layer everywhere.
 
-- [Fluent case](cases/fully_turbulent_SST/FULLY_TURBULENT_SST_KS023_SUST_FINAL.cas.h5) · [Fluent data](cases/fully_turbulent_SST/FULLY_TURBULENT_SST_KS023_SUST_FINAL.dat.h5)
-- [Ks and sustaining UDF](cases/fully_turbulent_SST/kerho_ks023_sustain_only.c)
+- [Fluent case](cases/FULLY_TURBULENT_SST_KS023_SUST_FINAL.cas.h5) · [Fluent data](cases/FULLY_TURBULENT_SST_KS023_SUST_FINAL.dat.h5)
+- [Ks and sustaining UDF](udf/kerho_ks023_sustain_only.c)
 
 **Velocity profiles — SST vs. Transition SST and Kerho–Bragg measurements**
 
@@ -106,4 +112,3 @@ A diagnostic with the **k–ω SST** closure and **transition equations disabled
 All provided `.cas.h5` and `.dat.h5` files are native Fluent archives. Reproducing UDF-based cases requires compiling the supplied `.c` files in a compatible Fluent environment and checking that the correct callbacks are assigned; the additional K = 10 mm source dependency is noted above. The roughness-transport implementation has unresolved convergence and discretization uncertainties. **The NACA 0012 study assesses numerical transition/roughness treatments; it is not an ice-accretion or rotor-thrust prediction.**
 
 See **Section 6 of the Research Internship Report** for computational settings, velocity normalization, profile-error metrics, residual histories, and limitations.
-
