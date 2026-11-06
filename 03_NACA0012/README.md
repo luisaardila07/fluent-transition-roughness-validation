@@ -8,7 +8,7 @@ The work first established a smooth reference and a native localized-roughness c
 
 Transition SST with **K = Ks = 0**, without turbulence-sustaining sources. This is the unmodified reference for subsequent calculations.
 
-- [Fluent case](cases/smooth/smoothcase.cas.h5) · [Fluent data](cases/smooth/smoothcase.dat.h5)
+- [Fluent case](cases/smoothcase.cas.h5) · [Fluent data](cases/smoothcase.dat.h5)
 
 **Velocity profiles — Fluent smooth vs. Langel numerical reference**
 
