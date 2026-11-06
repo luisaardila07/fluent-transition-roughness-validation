@@ -26,24 +26,31 @@ Detailed methodology and results are presented in **Section 5 of the Research In
 
 ![Fluent SU2 comparison](results/cf_fluent_su2.png)
 
+
 ## Parametric Study Results
 
-**Inlet turbulence intensity (Tu)**
+All parametric simulations were performed using the baseline Fluent configuration. Each study independently modified one input parameter while maintaining the computational mesh, freestream conditions, and remaining model settings unchanged.
+
+The investigated parameters were inlet turbulence intensity (Tu), inlet eddy viscosity ratio (μt/μ), geometric transition roughness height (K), equivalent sand-grain roughness height (Ks), and wall roughness constant (Cs).
+
+The following figures show the resulting skin-friction distributions. The complete parameter ranges and numerical procedures are documented in Section 5 of the Research Internship Report.
+
+### Inlet Turbulence Intensity (Tu)
 
 ![Turbulence intensity](results/turbulence_intensity.png)
 
-**Inlet eddy viscosity ratio (μt/μ)**
+### Inlet Eddy Viscosity Ratio (μt/μ)
 
 ![Eddy viscosity ratio](results/eddy_viscosity_ratio.png)
 
-**Geometric transition roughness (K)**
+### Geometric Transition Roughness (K)
 
 ![Geometric roughness](results/geometric_roughness_K.png)
 
-**Equivalent sand-grain roughness (Ks)**
+### Equivalent Sand-Grain Roughness (Ks)
 
 ![Sand-grain roughness](results/sand_grain_roughness_Ks.png)
 
-**Wall roughness constant (Cs)**
+### Wall Roughness Constant (Cs)
 
 ![Roughness constant](results/roughness_constant_Cs.png)
