@@ -13,13 +13,13 @@ As a preliminary step toward this objective, the investigation focused on assess
 
 The investigation was organized into three stages:
 
-1. **[VMFL043 — Flat-Plate Transition Benchmark](01_VMFL043/README.md)**  
+1. **[VMFL043 Flat-Plate Transition Benchmark](01_VMFL043/README.md)**  
    Validation of the Transition SST model against an ANSYS reference benchmark and experimental skin-friction measurements.
 
-2. **[ERCOFTAC T3A — Transition and Parametric Study](02_T3A/README.md)**  
+2. **[ERCOFTAC T3A Transition and Parametric Study](02_T3A/README.md)**  
    Comparison with NASA, SU2, and experimental data, followed by sensitivity analyses of turbulence and roughness parameters.
 
-3. **[NACA 0012 — Transition and Surface Roughness Assessment](03_NACA0012/README.md)**  
+3. **[NACA 0012 Transition and Surface Roughness Assessment](03_NACA0012/README.md)**  
    Smooth and rough-wall simulations, turbulence sustaining, global geometric-roughness diagnostics, exploratory roughness transport, and standard SST comparisons.
 
 Each directory contains ANSYS Fluent simulation files and selected results. The NACA 0012 directory also includes the available UDF source codes.
