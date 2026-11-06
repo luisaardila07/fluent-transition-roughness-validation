@@ -1,19 +1,49 @@
-# ERCOFTAC T3A — Flat-Plate Transition and Parametric Studies
 
-This case reconstructs the ERCOFTAC T3A transitional flat-plate configuration in ANSYS Fluent using the Transition SST model. The baseline solution was compared with NASA reference results, an independently computed SU2 solution, and experimental skin-friction measurements.
+# ERCOFTAC T3A — Flat-Plate Transition and Parametric Study
 
-The comparison at 16 experimental stations showed mean differences of **3.32%** between Fluent and NASA and **0.913%** between Fluent and SU2, while the mean discrepancy between Fluent and experimental measurements was **12.92%**.
+This case reconstructs the ERCOFTAC T3A flat-plate transition benchmark in ANSYS Fluent using the Transition SST model. The Fluent solution was compared with NASA reference results, an independently computed SU2 solution, and experimental skin-friction measurements.
 
-Controlled parametric studies investigated the influence of inlet turbulence intensity, inlet eddy viscosity ratio, geometric transition roughness height (K), equivalent sand-grain roughness height (Ks), and wall roughness constant (Cs).
+The comparisons showed mean percentage differences of **3.32% (Fluent–NASA)** and **0.913% (Fluent–SU2)**, and a mean discrepancy of **12.92% (Fluent–experiment)**.
 
-Detailed numerical settings, results, and discussion are presented in **Section 5 of the Research Internship Report**.
+A controlled parametric study investigated the effects of inlet turbulence intensity, inlet eddy viscosity ratio, geometric transition roughness (K), equivalent sand-grain roughness (Ks), and wall roughness constant (Cs). Each parameter was varied independently from the reference configuration.
+
+The SU2 calculation was based on the [official SU2 T3A tutorial](https://su2code.github.io/tutorials/Transitional_Flat_Plate_T3A/) and [SU2 Tutorials repository](https://github.com/su2code/Tutorials).
+
+Detailed methodology and results are presented in **Section 5 of the Research Internship Report**.
+
+## Fluent Simulation Files
+
+- [Case file](cases/final.cas.h5)
+- [Data file](cases/final.dat.h5)
 
 ## Baseline Validation Results
 
-**Fluent, NASA reference, and experimental measurements**
+**Fluent – NASA – Experiment**
 
-![T3A Fluent NASA comparison](results/cf_fluent_nasa.png)
+![Fluent NASA comparison](results/cf_fluent_nasa.png)
 
-**Fluent, SU2, and experimental measurements**
+**Fluent – SU2 – Experiment**
 
-![T3A Fluent SU2 comparison](results/cf_fluent_su2.png)
+![Fluent SU2 comparison](results/cf_fluent_su2.png)
+
+## Parametric Study Results
+
+**Inlet turbulence intensity (Tu)**
+
+![Turbulence intensity](results/turbulence_intensity.png)
+
+**Inlet eddy viscosity ratio (μt/μ)**
+
+![Eddy viscosity ratio](results/eddy_viscosity_ratio.png)
+
+**Geometric transition roughness (K)**
+
+![Geometric roughness](results/geometric_roughness_K.png)
+
+**Equivalent sand-grain roughness (Ks)**
+
+![Sand-grain roughness](results/sand_grain_roughness_Ks.png)
+
+**Wall roughness constant (Cs)**
+
+![Roughness constant](results/roughness_constant_Cs.png)
